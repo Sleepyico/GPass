@@ -8,8 +8,8 @@ interface Props {
 }
 
 const title = Astro.props.title
-  ? `${Astro.props.title} — PSWD`
-  : 'PSWD: Simple Secure Password Generator';
+  ? `${Astro.props.title} — GPass`
+  : 'GPass: Simple Secure Password Generator';
 
 const description =
   Astro.props.description || 'A simple and secure password generator.';
@@ -24,7 +24,7 @@ const og = Astro.props.og || '/og.png';
     <meta content="width=device-width" name="viewport" />
     <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
     <meta content={Astro.generator} name="generator" />
-    <meta content="#18181b" name="theme-color" />
+    <meta content="#ac1c23" name="theme-color" />
 
     <title>{title}</title>
     <meta content={title} name="title" />
@@ -32,10 +32,10 @@ const og = Astro.props.og || '/og.png';
 
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
-    <meta content="PSWD" property="og:site_name" />
-    <meta content="https://pswd.mvze.net/" property="og:url" />
+    <meta content="GPass" property="og:site_name" />
+    <meta content="https://pass.iconical.dev/" property="og:url" />
     <meta content="website" property="og:type" />
-    <meta content={`https://pswd.mvze.net${og}`} property="og:image" />
+    <meta content={`https://pass.iconical.dev${og}`} property="og:image" />
 
     <link href="/sitemap-index.xml" rel="sitemap" />
   </head>

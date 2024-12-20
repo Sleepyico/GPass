@@ -29,65 +29,68 @@ const WORDLIST = wordlist;
 export function App() {
   const [activeTab, setActiveTab] = useLocalStorage<
     'normal' | 'diceware' | 'pin'
-  >('pswd-active-tab', 'normal');
+  >('gpass-active-tab', 'normal');
   const { copy, copying } = useCopy();
   const [showPassword, setShowPassword] = useLocalStorage(
-    'pswd-show-password',
+    'gpass-show-password',
     true,
   );
 
   const [password, setPassword] = useState('');
-  const [length, setLength] = useLocalStorage('pswd-length', 12);
+  const [length, setLength] = useLocalStorage('gpass-length', 12);
   const [includeUpper, setIncludeUpper] = useLocalStorage(
-    'pswd-include-upper',
+    'gpass-include-upper',
     true,
   );
   const [includeLower, setIncludeLower] = useLocalStorage(
-    'pswd-include-lower',
+    'gpass-include-lower',
     true,
   );
   const [includeNumbers, setIncludeNumbers] = useLocalStorage(
-    'pswd-include-numbers',
+    'gpass-include-numbers',
     true,
   );
   const [includeSymbols, setIncludeSymbols] = useLocalStorage(
-    'pswd-include-symbols',
+    'gpass-include-symbols',
     true,
   );
   const [excludeSimilar, setExcludeSimilar] = useLocalStorage(
-    'pswd-exclude-similar',
+    'gpass-exclude-similar',
     false,
   );
   const [customSymbols, setCustomSymbols] = useLocalStorage(
-    'pswd-custom-symbols',
+    'gpass-custom-symbols',
     '',
   );
   const [excludeSymbols, setExcludeSymbols] = useLocalStorage(
-    'pswd-exclude-symbols',
+    'gpass-exclude-symbols',
     '',
   );
 
-  const [wordCount, setWordCount] = useLocalStorage('pswd-word-count', 6);
-  const [separator, setSeparator] = useLocalStorage('pswd-separator', 'space');
-  const [capitalize, setCapitalize] = useLocalStorage('pswd-capitalize', false);
+  const [wordCount, setWordCount] = useLocalStorage('gpass-word-count', 6);
+  const [separator, setSeparator] = useLocalStorage('gpass-separator', 'space');
+  const [capitalize, setCapitalize] = useLocalStorage(
+    'gpass-capitalize',
+    false,
+  );
   const [randomCapitalization, setRandomCapitalization] = useLocalStorage(
-    'pswd-random-capitalization',
+    'gpass-random-capitalization',
     false,
   );
   const [randomNumberBeginning, setRandomNumberBeginning] = useLocalStorage(
-    'pswd-random-number-beginning',
+    'gpass-random-number-beginning',
     false,
   );
   const [randomNumberEnd, setRandomNumberEnd] = useLocalStorage(
-    'pswd-random-number-end',
+    'gpass-random-number-end',
     false,
   );
   const [customWordlist, setCustomWordlist] = useLocalStorage(
-    'pswd-custom-wordlist',
+    'gpass-custom-wordlist',
     '',
   );
 
-  const [pinLength, setPinLength] = useLocalStorage('pswd-pin-length', 6);
+  const [pinLength, setPinLength] = useLocalStorage('gpass-pin-length', 6);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -565,7 +568,7 @@ export function App() {
                     min="3"
                     type="number"
                     value={pinLength}
-                    onChange={e => setPinLenght(Number(e.target.value))}
+                    onChange={e => setPinLength(Number(e.target.value))}
                   />
 
                   <input
